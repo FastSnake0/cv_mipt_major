@@ -42,13 +42,9 @@ def zero_pad(image, pad_height, pad_width):
     Returns:
         out: numpy array of shape (H+2*pad_height, W+2*pad_width).
     """
-
-    H, W = image.shape
-    out = np.zeros_like(image)
-
-    ### YOUR CODE HERE
-    pass
-    ### END YOUR CODE
+    # Используем np.pad для добавления нулевых отступов
+    out = np.pad(image, ((pad_height, pad_height), (pad_width, pad_width)), mode='constant', constant_values=0)
+    
     return out
 
 
